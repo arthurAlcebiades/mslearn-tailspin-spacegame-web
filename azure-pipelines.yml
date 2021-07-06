@@ -86,7 +86,7 @@ stages:
         WebAppName: 'todotapim'
         packageForLinux: '$(System.ArtifactsDirectory)/drop/*.zip'
     - task: stephane-eyskens.apim.apim.apim@3
-        displayName: "API Management - Create/Update API"
+        displayName: "apim-dev-001"
         inputs:
           ConnectedServiceNameARM: 'Microsoft Azure Sponsorship New'
           ResourceGroupName: $(ResourceGroupName)
@@ -127,7 +127,7 @@ stages:
         tags: |
           $(tag)
     - task: KubernetesManifest@0
-      displayName: Create imagePullSecret
+      displayName: aks-dev-001
       inputs:
         action: createSecret
         secretName: $(imagePullSecret)
